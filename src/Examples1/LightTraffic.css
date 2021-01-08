@@ -1,0 +1,26 @@
+.Traffic{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.light{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+.red{
+    background-color: red;
+    opacity: 0.3;
+}
+.green{
+    background-color: green;
+    opacity: 0.3;
+}
+.yellow{
+    background-color: yellow;
+    opacity: 0.3;
+}
+.active{
+    opacity: 1;
+}
