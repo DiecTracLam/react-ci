@@ -1,10 +1,14 @@
 import './App.css'
-
-//import {LightBulb} from './components/LightBulb'
-//import  LightTraffic from "./Examples1/LightTraffic";
-import ToDoList from "./Example2/ToDoList.jsx";
+import Emoji from './components/Emoji';
+import Header from "./components/Header";
+import Search from "./components/Search";
 function App() {
-    return <ToDoList/>
+    return (
+        <div>
+            <Header />
+            <Search />
+            <Emoji title='100'/>
+        </div>)
 }
 
 export default App;
