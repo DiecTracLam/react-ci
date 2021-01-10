@@ -1,5 +1,5 @@
 import './App.css'
-import Emoji from './components/Emoji';
+import EmojiList from './components/EmojiList';
 import Header from "./components/Header";
 import Search from "./components/Search";
 function App() {
@@ -7,7 +7,7 @@ function App() {
         <div>
             <Header />
             <Search />
-            <Emoji title='100'/>
+            <EmojiList />
         </div>)
 }
 

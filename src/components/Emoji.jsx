@@ -2,9 +2,11 @@ import React from "react";
 import '../css/Emoji.css'
 class Emoji extends React.Component{
     render(){
+        const {symbol}=this.props;
+        const {title}=this.props
         return(
-            <div>
-                <p>This is text</p>
+            <div className='Anime'>
+                {symbol}{title}
             </div>
         )
     }

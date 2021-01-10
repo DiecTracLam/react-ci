@@ -4,7 +4,7 @@ class Header extends React.Component{
     render(){
         return(
             <div className='header'>
-                <h1>Search for favorite emoji</h1>
+                <h1>😀Search for favorite emoji😀</h1>
             </div>
         )
     }
