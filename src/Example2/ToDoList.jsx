@@ -8,11 +8,12 @@ class ToDoList extends Component {
         super();
         this.state = {
             todoItems: [
-                { title: 'Mua bim bim', isComplete: true },
-                { title: 'Di da banh', isComplete: true },
+                { title: 'Mua bim bim', isComplete: false },
+                { title: 'Di da banh', isComplete: false },
                 { title: 'Xem phim', isComplete: false }
             ]
         }
+        this.onKeyup=this.onKeyup.bind(this);
     }
     onItem(item) {
         const toDoItem = this.state.todoItems;
@@ -27,19 +28,39 @@ class ToDoList extends Component {
                 },
                 ...toDoItem.slice(index + 1)
             ]
+        });
+    }
+    onKeyup(ev){
+        console.log(this.state.todoItems)
+        console.log(...this.state.todoItems)
+        let text=ev.target.value;
+        text=text.trim();
+        if(text==='')
+            return ;           
+        if(ev.keyCode===13){
+            this.setState({
+                todoItems:[
+                    {
+                        title:text , isComplete:false
+                    },
+                    ...this.state.todoItems,
+                ]
+            })
+            ev.target.value=' ';
         }
-
-        );
     }
     render() {
-        console.log()
         return (
-            <div className="App list">
+            <div className="list">
+                <div className="Header">
+                    <input type="checkbox" />
+                    <input type="text" onKeyUp={this.onKeyup}/>
+                </div>
                 {this.state.todoItems.map((item, index) => {
                     return (
                         <div key={index} className='list-todoitem'>
+                            <input type="checkbox" onClick={() => this.onItem(item)} />
                             <ToDoItem key={index} list={item} />
-                            <button onClick={() => this.onItem(item)}></button>
                         </div>
                     )
                 })}

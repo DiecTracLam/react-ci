@@ -8,9 +8,19 @@
 .list-todoitem{
     border-bottom: 1px solid #EEE;
     padding: 10px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
 }
 .list{
     border: 1px solid rgb(54, 52, 52);
     margin-left: 30vw;
     margin-right:30vw ;
-}   
+}
+.Header{
+    border-bottom: 1px solid #EEE;
+    padding: 10px;
+}
+.Header input[type='checkbox']{
+    margin-right: 10px;
+}  
