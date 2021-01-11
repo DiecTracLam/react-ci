@@ -1,18 +1,9 @@
 import React from "react";
 class Search extends React.Component {
-    constructor(prop){
-        super(prop);
-        this.state={
-            kw:''
-        }
-    }
-    handlechange(event){
-        console.log(event.target.value);
-    }
     render() {
         return (
             <div className="input">
-                <input type="text" onChange={()=>this.handlechange()}/>
+                <input type="text" placeholder='Input your favorite emoji' onChange={this.props.change}/>
             </div>
         )
     }

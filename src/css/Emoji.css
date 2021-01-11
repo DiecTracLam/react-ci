@@ -6,13 +6,15 @@ input[type='text']{
     width: 80%;
     height: 20px;
     margin: 0 10vw;
+    font-size: 15px;
+    padding: 7px;
 }
 .input{
     margin: 0;
 }
 .EmojiList{
     margin: 0 10vw;
-    width: 80.5%;
+    width: 81.3%;
     overflow: scroll;
     height: 80vh;
 }
