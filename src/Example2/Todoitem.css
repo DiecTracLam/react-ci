@@ -1,7 +1,16 @@
-.Todoitem{
+.Todoitem-iscomplte{
     text-decoration: line-through;
     opacity: 0.3;
 }
-.b{
-    background-color: yellow;
+.Todoitem > p{
+    margin: 0;
 }
+.list-todoitem{
+    border-bottom: 1px solid #EEE;
+    padding: 10px;
+}
+.list{
+    border: 1px solid rgb(54, 52, 52);
+    margin-left: 30vw;
+    margin-right:30vw ;
+}   

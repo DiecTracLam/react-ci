@@ -4,7 +4,7 @@ import './App.css'
 //import  LightTraffic from "./Examples1/LightTraffic";
 import ToDoList from "./Example2/ToDoList.jsx";
 function App() {
-    return <ToDoList/>
+    return <ToDoList />
 }
 
 export default App;

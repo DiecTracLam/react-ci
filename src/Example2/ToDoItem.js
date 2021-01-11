@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import classNames from "classnames";
 import "./Todoitem.css";
-class ToDoItem extends Component{
-    render(){
-        return(
-            <div className={classNames({'Todoitem':this.props.list.isComplete===true})}>
-                {this.props.list.title}
+class ToDoItem extends Component {
+    render() {
+        const { list } = this.props
+        return (
+            <div className={classNames({ 'Todoitem-iscomplte': list.isComplete === true }, 'Todoitem')}>
+                <p>{list.title}</p>
             </div>
         )
     }
@@ -13,6 +14,6 @@ class ToDoItem extends Component{
 export default ToDoItem
 
 
-/* 
+/*
     <ToDoITem key={index} item='item'/> ToDoITem.props.item
-*/ 
+*/
