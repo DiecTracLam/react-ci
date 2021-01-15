@@ -13,7 +13,7 @@ class ToDoList extends Component {
                 { title: 'Xem phim', isComplete: false }
             ]
         }
-        this.onKeyup=this.onKeyup.bind(this);
+        this.onKeyup = this.onKeyup.bind(this);
     }
     onItem(item) {
         const toDoItem = this.state.todoItems;
@@ -30,23 +30,25 @@ class ToDoList extends Component {
             ]
         });
     }
-    onKeyup(ev){
+    onKeyup(ev) {
         console.log(this.state.todoItems)
         console.log(...this.state.todoItems)
-        let text=ev.target.value;
-        text=text.trim();
-        if(text==='')
-            return ;           
-        if(ev.keyCode===13){
+        let text = ev.target.value;
+        text = text.trim();
+        if (text === '') {
+            ev.target.value = '';
+            return;
+        }
+        if (ev.keyCode === 13) {
             this.setState({
-                todoItems:[
+                todoItems: [
                     {
-                        title:text , isComplete:false
+                        title: text, isComplete: false
                     },
                     ...this.state.todoItems,
                 ]
             })
-            ev.target.value=' ';
+            ev.target.value = ' ';
         }
     }
     render() {
@@ -54,7 +56,7 @@ class ToDoList extends Component {
             <div className="list">
                 <div className="Header">
                     <input type="checkbox" />
-                    <input type="text" onKeyUp={this.onKeyup}/>
+                    <input type="text" onKeyUp={this.onKeyup} />
                 </div>
                 {this.state.todoItems.map((item, index) => {
                     return (
