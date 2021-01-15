@@ -1,10 +1,13 @@
 import './App.css'
-
-//import {LightBulb} from './components/LightBulb'
-//import  LightTraffic from "./Examples1/LightTraffic";
-import ToDoList from "./Example2/ToDoList.jsx";
+import  Search  from "./components/Header.jsx";
+import Book from "./components/Book.jsx";
 function App() {
-    return <ToDoList/>
+    return (
+        <div>
+            <Search />
+            <Book/>
+        </div>
+    )
 }
 
 export default App;
