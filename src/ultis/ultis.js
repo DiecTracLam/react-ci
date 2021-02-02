@@ -1,4 +1,4 @@
-import { firebaseConfig } from '../config/config.firebase';
+import { firebaseConfig } from '../config/config.firebase.js';
 import "firebase/firestore";
 import firebase from 'firebase/app'
 try {
@@ -80,7 +80,6 @@ export function getTodo(userID){
             console.log('Empty');
         // console.log(typeof querySnapshot);
         querySnapshot.forEach(doc=>{
-            // console.log(data.data());
             todoList.push({
                 id:doc.id,
                 ...doc.data()            
