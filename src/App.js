@@ -1,10 +1,22 @@
 import './App.css'
-
-//import {LightBulb} from './components/LightBulb'
-//import  LightTraffic from "./Examples1/LightTraffic";
-import ToDoList from "./Example2/ToDoList.jsx";
+import { ForgetPW } from './components/ForgetPassword';
+import { Header } from "./components/Header";
+import { TodoApp } from './components/Home';
+import { SignIn } from "./components/SignIn";
+import { SignUp } from "./components/Signup"
 function App() {
-    return <ToDoList/>
+    const com = {
+        '/Signin': <SignIn />,
+        '/Signup': <SignUp />,
+        '/': <TodoApp />,
+        '/Forget':<ForgetPW/>
+    }
+    return (
+        <div className='app-cont'>
+            <Header />
+            {com[window.location.pathname]}
+        </div>
+    )
 }
 
 export default App;

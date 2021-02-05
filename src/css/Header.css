@@ -1,0 +1,41 @@
+.header{
+    height: 7%;
+    display: flex;
+    justify-content: space-between;	
+    flex-direction: row;
+    font-size: larger;
+    background-color: greenyellow;
+    box-shadow: 5px 5px 5px #888888;
+}
+.sibar-header{
+    width: 50%;
+}
+.sibar-header > ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+.sibar-header > ul li:hover{
+    background-color: rgb(114, 114, 250);
+    cursor: pointer;
+}
+.sibar-header > ul li{
+    text-align: center;
+    padding: 10px 0;
+    width: 25%;
+}
+.sibar-header > ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight:bolder;
+    display: block;
+}
+.item>a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+}
+.item{
+    padding: 10px 40px;
+}
