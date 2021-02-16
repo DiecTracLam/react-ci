@@ -1,0 +1,31 @@
+.Todo{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 30%;
+    margin: 2.5%;
+    background-color: white;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+.Todo-function{
+    display: flex;
+    flex-direction: row;
+}
+.Todo-title{
+    text-align: center;
+}
+.Todo-function{
+    color: aqua;
+    cursor: pointer;
+    font-size: 18px;
+}
+.Todo-function>p{
+    margin-left: 5%;
+    width: fit-content;
+    font-size: 16px;
+}
+.Todo-function>p:hover{
+    opacity: 0.8;
+    text-decoration: underline;
+}

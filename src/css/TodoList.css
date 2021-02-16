@@ -1,0 +1,23 @@
+.Todolist{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(240, 240, 240);
+}
+.add{
+    position: absolute;
+    right: 7%;
+    bottom: 10%;
+    cursor: pointer;
+    background-color:#0fafee;
+    color: white;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

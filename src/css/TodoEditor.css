@@ -1,0 +1,44 @@
+.TodoEditor-icon{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    height: 6%;
+    font-size: 15px;
+    align-items: center;
+    font-weight: bolder;
+    color: aqua;
+    padding: 0 15px ;
+}
+.TodoEditor-icon .Cancle-icon{
+    font-size: 22px;
+}
+.TodoEditor-icon>p{
+    cursor: pointer;
+}
+.TodoEditor{
+    width: 100%;
+    height: 100%;
+    padding: 2.5%;
+    border: 2px solid red;
+}
+.TodoEditor-title{
+    margin: 2% 0;
+}
+.TodoEditor-title>input[type='text']{
+    width: 100%;
+    height: 5%;
+}
+.Editor-content{
+    width: 100%;
+    height: 80%;
+}
+.Editor-content > textarea{
+    height: 100%;
+    width: 100%;
+    /* resize: none;
+    outline: none; */
+    padding: 0.5%;
+    overflow: auto;
+    font-size: 17px;
+}
