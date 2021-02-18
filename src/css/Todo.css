@@ -20,6 +20,9 @@
     cursor: pointer;
     font-size: 18px;
 }
+.Todo-content{
+    overflow:auto
+}
 .Todo-function>p{
     margin-left: 5%;
     width: fit-content;
@@ -28,4 +31,7 @@
 .Todo-function>p:hover{
     opacity: 0.8;
     text-decoration: underline;
+}
+.Complete{
+    text-decoration: line-through;
 }

@@ -88,16 +88,16 @@ const db = firebase.firestore()
 //         })
 //     })
 // }
-let i=0;
+let i = 0;
 export function getTodo(userID) {
     return new Promise((resolve, reject) => {
-        db.collection('todos').get()
+        db.collection('todos').where('ownerID', '==', userID).get()
             .then(data => {
                 if (data.empty)
                     console.log('Empty')
                 let list = []
                 data.forEach(data => {
-                    list.push({...data.data()});
+                    list.push({ ...data.data() });
                     i++;
                 })
                 resolve(list);
@@ -107,7 +107,7 @@ export function getTodo(userID) {
 
 export function signup({ user, password }) {
     return new Promise((resolve, reject) => {
-        db.collection('users').where('user','==',user).get()
+        db.collection('users').where('user', '==', user).get()
             .then(querysnapShort => {
                 if (querysnapShort.empty) {
                     db.collection('users').add({
@@ -120,47 +120,62 @@ export function signup({ user, password }) {
                 else
                     alert("Username was existed")
             }
-        )
+            )
     })
 }
 
-export function signinUtis({user , password}){
-    return new Promise((resolve,reject)=>{
-        console.log(user, typeof password)
-        db.collection('users').where('user','==',user).get()
-        .then(querysnapShort=>{
-            if(querysnapShort.empty){
-                throw new Error("Username wrong")
-            }
-            let data=[];
-            querysnapShort.forEach(doc=>{
-                data.push({
-                    userID:doc.id,
-                    ...doc.data(),
+export function signinUtis({ user, password }) {
+    return new Promise((resolve, reject) => {
+        user=user.trim();
+        db.collection('users').where('user', '==', user).get()
+            .then(querysnapShort => {
+                if (querysnapShort.empty) {
+                    throw new Error("Username wrong")
+                }
+                let data = [];
+                querysnapShort.forEach(doc => {
+                    data.push({
+                        userID: doc.id,
+                        ...doc.data(),
+                    })
                 })
-            },{
-                merge:true
+                if (data[0]['password'] == password) {
+                    console.log(data[0]['userID'])
+                    resolve(data[0]['userID'])
+                }
+                throw new Error('Login failed')
+
             })
-            if(data[0]['password']==password)
-            {
-                console.log(data[0]['userID'])
-                resolve(data[0]['userID'])
-            }
-            throw new Error('Login failed')
-            
-        })
-        .catch(mess=>{
-            reject(mess);
-        })
+            .catch(mess => {
+                reject(mess);
+            })
     })
 }
-export function updateTodo(newTodo){
-    console.log(newTodo,newTodo.title)
-    console.log(newTodo.content,newTodo.id)
-        db.collection('todos').doc(newTodo.id).set({
-            title:newTodo.title,
-            content:newTodo.content
-        },{
-            merge:true
+export function updateTodo(newTodo) {
+    db.collection('todos').doc(newTodo.id).set(
+        newTodo
+        , {
+            merge: true
         })
-    }
+}
+export function addTodo(newTodo) {
+    console.log(newTodo)
+    return new Promise((resolve, reject) => {
+        db.collection('todos').add(newTodo)
+            .then(data => {
+                resolve(data.id);
+            })
+    })
+}
+export function removeToDo(todo) {
+    db.collection('todos').doc(todo.id).delete()
+}
+export function infor(userID) {
+    return new Promise((resolve, reject) => {
+        console.log(userID)
+        db.collection('users').doc(userID).get()
+            .then(data => {
+                resolve(data.data().img)
+            })
+    })
+}
