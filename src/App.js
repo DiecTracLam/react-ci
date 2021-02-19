@@ -1,10 +1,11 @@
 import './App.css'
-
-//import {LightBulb} from './components/LightBulb'
-//import  LightTraffic from "./Examples1/LightTraffic";
-import ToDoList from "./Example2/ToDoList.jsx";
+import { Chatapp } from "./components/chatApp";
 function App() {
-    return <ToDoList/>
+    return (
+        <div className='app-cont'>
+            <Chatapp />
+        </div>
+    )
 }
 
 export default App;

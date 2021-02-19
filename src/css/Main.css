@@ -1,0 +1,20 @@
+.Main{
+    width: 77%;
+    height: 100%;
+    border: 2px solid yellow;
+}
+.infor{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid red;
+    margin-bottom: 15px ;
+    padding:0 5px
+}
+.container-icon>i:hover{
+    cursor: pointer;
+    color: lightblue;
+}
+.container-icon>i{
+    margin: 0 4px;
+    font-size: 20px;
+}
